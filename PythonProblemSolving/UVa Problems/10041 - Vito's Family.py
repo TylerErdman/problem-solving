@@ -1,28 +1,31 @@
-# super slow solution
+from statistics import median
 
-def evaluate_for_j(j, test_line):
+
+def evaluate_answer(answer_house, test_line):
     total_diff = 0
-    for num in test_line:
-        total_diff += abs(num - j)
+
+    for house in test_line:
+        total_diff += abs(house - answer_house)
 
     return total_diff
 
 
 def main():
+
     tests = int(input())
     for i in range(tests):
-        test_line = list(map(int, input().split(" ")))
+        test_line = input().split(" ")
+        test_line = list(map(int, test_line))
+        
 
         del test_line[0]
+        test_line.sort()
+        
+        answer_house = median(test_line)
 
-        minimum = min(test_line)
-        maximum = max(test_line)
-        answer_list = []
+        answer = evaluate_answer(answer_house, test_line)
 
-        for j in range(minimum, maximum + 1):
-            answer_list.append(evaluate_for_j(j, test_line))
-
-        print(min(answer_list))
+        print(int(answer))
 
 
 if __name__ == '__main__':
