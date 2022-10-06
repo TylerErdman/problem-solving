@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
  
 #define fast_cin() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL)
@@ -14,16 +15,8 @@ int main()
     int houses;
     cin >> t;
     for(int it=1;it<=t;it++) {
-        int answer;
-        cin >> houses;
-        int sum;
-        int num;
-        for (int i = 0;i < houses; i++) {
-            cin >> num;
-            sum = sum + num;
-        }
-        answer = sum / houses;
-        cout << answer << endl;
+        int num_houses;
+        cin >> num_houses;
     }
     return 0;
 }
