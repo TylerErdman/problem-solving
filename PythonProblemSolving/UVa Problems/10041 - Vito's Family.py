@@ -16,7 +16,6 @@ def main():
     for i in range(tests):
         test_line = input().split(" ")
         test_line = list(map(int, test_line))
-        
 
         del test_line[0]
         test_line.sort()
