@@ -38,7 +38,7 @@ def find_and_remove_yahtzee(case: list) -> int:
 
 def evaluate_test_case(case: list) -> list:
     running_total = 0
-    answer_list = [0 in range(15)]
+    answer_list = [0 for _ in range(15)]
 
     if find_and_remove_yahtzee(case) == 50:
         answer_list[9] = 50
